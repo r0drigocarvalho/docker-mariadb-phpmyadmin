@@ -1,4 +1,4 @@
-# Docker running MySQL with PHPMyAdmin
+# Docker running MariaDB with PHPMyAdmin
 
 ## Overview
 
