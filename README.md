@@ -83,7 +83,7 @@ ___
 To install [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git), download it and install following the instructions :
 
 ```sh
-git clone https://github.com/r0drigocarvalho/docker-mysql-phpmyadmin
+git clone https://github.com/r0drigocarvalho/docker-mariadb-phpmyadmin
 ```
 
 Go to the project directory :
