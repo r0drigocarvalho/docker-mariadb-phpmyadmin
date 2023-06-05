@@ -1,0 +1,31 @@
+version: '3'
+services:
+    phpmyadmin:
+        container_name: ${PROJECT_NAME}-phpmyadmin
+        image: phpmyadmin:latest
+        restart: always
+        expose:
+        - "40001"
+        ports:
+        - "40001:80"
+        environment:
+        - PMA_HOST=mariadb
+        - PMA_PORT=3306
+    mariadb:
+        container_name: ${PROJECT_NAME}-mariadb
+        image: mariadb:${MYSQL_VERSION}
+        restart: always
+        environment:
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_HOST: ${MYSQL_HOST}
+            MYSQL_ROOT_USER: ${MYSQL_ROOT_USER}
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+            TZ: "America/Sao_Paulo"
+        expose:
+            - "40000"
+        ports:
+            - "40000:3306"
+        volumes:
+        - "./data/db/mysql:/var/lib/mysql"
